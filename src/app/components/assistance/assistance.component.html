@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row " style="align-items: center;">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="card text-center sombreado">
+                <div class="card-body ">
+                    <h3 class="card-title">Formulario de Registro de Asistencia Tecnica</h3>
+
+                    <div class="row ">
+                        <div class="col-md-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="">Descripcion:</label>
+                                <input type="text" [(ngModel)]="description" class="form-control formatCard" placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="">Dirección:</label>
+                                <input type="text" [(ngModel)]="Address" class="form-control formatCard" placeholder="">
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="">Localización por Gps:</label>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-3">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" (click)="activationMap()" data-bs-toggle="modal" data-bs-target="#exampleModal3">Seleccionar GPS</button>
+                                <button type="button" class="btn btn-primary" (click)="activationMap()">Seleccionar GPS</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <input type="text" value="Registrar" class="btn btn-dark" (click)="registerAssitance()" style="margin-top: 10px; margin-left: 10px;">
+                    <button type="button" class="btn btn-primary" (click)="changeLocation()" style="margin-top: 10px; margin-left: 10px;">Cambiar Ubicación GPS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Mapa para registrar Ubicación</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <h5>PRUEBA</h5>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

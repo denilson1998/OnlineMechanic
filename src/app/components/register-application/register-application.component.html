@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+
+    <!-- <div class="col">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="margin-right: 0.5rem;">Registrar Evento</button>
+    </div> -->
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="table-container table-responsive">
+                <table class="table table-success table-striped">
+                    <thead class="text-center">
+                        <tr>
+                            <th class="col-sm-2">Id</th>
+                            <th class="col-sm-3">Descripción</th>
+                            <th class="col-sm-3">Fecha</th>
+                            <th class="col-sm-2">Latitud</th>
+                            <th class="col-sm-2">Longitud</th>
+                            <th class="col-sm-2">Dirección</th>
+                            <th class="col-sm-2">Estado</th>
+                            <th class="col-sm-2">Accion 1</th>
+                            <th class="col-sm-2">Accion 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="table-info border-dark" [hidden]="variable2">
+                            <td [colSpan]=" 9 " class="centered">
+                                No hay Datos para la Busqueda!
+                            </td>
+                        </tr> -->
+                        <tr class="table-info border-dark " *ngFor="let assistance of assistances">
+
+
+                            <td class="p2">
+                                <p class="center-pharagraph">{{assistance.id}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph">{{assistance.description}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph">{{assistance.dateTime}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph">{{assistance.gpsLocationLatitude}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph">{{assistance.gpsLocationLongitude}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph">{{assistance.address}}</p>
+                            </td>
+                            <td>
+                                <p class="center-pharagraph" *ngIf="assistance.statusId == 1">Creado</p>
+                            </td>
+                            <td class="centered">
+                                <button type="button" class="btn btn-primary btn-sm" (click)="seeGpsLocation(assistance.gpsLocationLatitude, assistance.gpsLocationLongitude)">Mirar Ubicacion Gps</button>
+                                <br>
+                            </td>
+                            <td class="centered">
+                                <button type="button" (click)="saveAssistanceId(assistance.id)" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Applicar
+                                </button>
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulario de Registro de Aplicación</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="arrivalTimeStimated" class="col-form-label">Tiempo Estimado de Llegada:</label>
+                    <input type="text" [(ngModel)]="arrivalTimeStimated" class="form-control" id="arrivalTimeStimated">
+                </div>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Costo del Servicio:</label>
+                    <input type="text" [(ngModel)]="baseCost" class="form-control" id="baseCost">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="registerApplication()" class="btn btn-primary">Registrar Aplicación</button>
+            </div>
+        </div>
+    </div>
+</div>

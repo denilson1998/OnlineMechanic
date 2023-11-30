@@ -1,0 +1,43 @@
+<div class="image" style="background-image: url('../../../assets/images/fondo-plomo.jpg'); overflow-y: hidden;">
+    <app-navbar></app-navbar>
+    <div class="row " style="align-items: center;">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="card text-center sombreado">
+                <div class="card-body ">
+                    <h3 class="card-title">Formulario de Registro de Mecanicos</h3>
+
+                    <div class="row margin">
+                        <div class="col-md-6 col-sm-3">
+                            <input type="text" id="name" class="form-control" name="name" placeholder="Ingresar Nombre" [(ngModel)]="name">
+                        </div>
+                        <div class="col-md-6 col-sm-3">
+                            <input type="text" id="name" class="form-control" name="phoneNumber" placeholder="Ingresar Telefono " [(ngModel)]="phoneNumber">
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="col-md-6 col-sm-3">
+                            <input type="text" id="name" class="form-control" name="email" placeholder="Ingresar Email " [(ngModel)]="email">
+                        </div>
+                        <div class="col-md-6 col-sm-3">
+                            <input type="text" id="name" class="form-control" name="password" placeholder="Ingresar Contraseña" [(ngModel)]="password">
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="col-md-6 col-sm-3">
+                            <label for="exampleInputPassword1" class="form-label">Seleccione una categoria:</label>
+                        </div>
+                        <div class="col-md-6 col-sm-3">
+                            <select class="form-select" name="categoryId" aria-label="Default select example" [(ngModel)]="categoryId" (ngModelChange)="change()">
+                            <option *ngFor="let category of categories"  [value]= "category.id">{{category.description}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input type="text" value="Registrar" class="btn btn-dark" (click)="registerClient()" style="margin-top: 10px; margin-left: 10px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

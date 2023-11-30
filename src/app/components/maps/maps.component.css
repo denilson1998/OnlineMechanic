@@ -1,0 +1,15 @@
+#map {
+    width: 98%;
+    height: 83%;
+    margin: 20px;
+}
+
+.container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    /* Para alinear el texto centralmente si es necesario */
+}
