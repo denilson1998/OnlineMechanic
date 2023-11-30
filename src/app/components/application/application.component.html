@@ -1,3 +1,31 @@
 <app-navbar></app-navbar>
-<h5>prueba</h5>
+<div class="container">
+    <!-- <div class="row mt-4">
+        <div class="col-12 centered">
+            <h3 style="text-align: center;">
+                Aplicaciones
+            </h3>
+        </div>
+    </div> -->
+    <hr>
+    <div class="row gy-3 gm-3">
+        <div class="col-sm-6 col-md-4 col-lg-4" *ngFor="let application of applications; let i = index">
+            <div class="card">
+                <h3 class="tittle-card">Aplicación &nbsp;{{ i + 1 }}</h3>
+                <img src="../../../assets/images/portada.jpg" alt="image" class="card-img-top">
+                <div class="card-body centered">
+                    <h4 class="card-tittle">Tiempo de llegada estimado: {{application.arrivalTimeStimated}}</h4>
+                    <h4 class="card-tittle">Costo Servicio: {{application.baseCost}}</h4>
+                </div>
+                <div class="card-footer">
+                    <div class="centered">
+                        <button (click)="confirmApplication(application.id)" type="button" class="btn btn-outline-info btn-block btn-lg">
+                            Aceptar Aplicacion
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <app-footer></app-footer>

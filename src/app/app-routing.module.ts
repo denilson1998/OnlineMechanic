@@ -9,6 +9,7 @@ import { RegisterMechanicShopComponent } from "./components/register-mechanic-sh
 import { MapsComponent } from './components/maps/maps.component';
 import { ApplicationComponent } from "./components/application/application.component";
 import { RegisterApplicationComponent } from "./components/register-application/register-application.component";
+import { ApplicationsByMechanicComponent } from "./components/applications-by-mechanic/applications-by-mechanic.component";
 
 const routes: Routes = [
     {path: '', redirectTo:'/login' , pathMatch:'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'maps', component: MapsComponent},
     {path: 'showApplications', component: ApplicationComponent},
     {path: 'registerApplications', component: RegisterApplicationComponent},
+    {path: 'applicationsByMechanic', component: ApplicationsByMechanicComponent},
     {path: '**', redirectTo:'/login', pathMatch:'full'}
 ];
 

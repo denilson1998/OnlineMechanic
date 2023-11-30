@@ -19,8 +19,19 @@ export class ApplicationService {
   }
   
   getApplications(): Observable<any>{
-    return this.http.get(this.url + "Application/GetApplications");
+    let clientId = +sessionStorage.getItem("userId")!;
+    return this.http.get(this.url + `Application/GetApplications/${clientId}`);
   }
+
+  updateApplication(applicationId: any): Observable<any>{
+    
+    return this.http.post(this.url + `Application/UpdateApplication/${applicationId}`, "");
+  }
+  
+  getApplicationsByStatus(): Observable<any>{
+    return this.http.get(this.url + `Application/GetApplicationsByStatus/3`);
+  }
+
   
   setHeaders() {
     this.headers = new HttpHeaders()

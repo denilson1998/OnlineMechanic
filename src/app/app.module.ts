@@ -17,6 +17,7 @@ import { RegisterMechanicShopComponent } from './components/register-mechanic-sh
 import { MapsComponent } from './components/maps/maps.component';
 import { ApplicationComponent } from './components/application/application.component';
 import { RegisterApplicationComponent } from './components/register-application/register-application.component';
+import { ApplicationsByMechanicComponent } from './components/applications-by-mechanic/applications-by-mechanic.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { RegisterApplicationComponent } from './components/register-application/
     RegisterMechanicShopComponent,
     MapsComponent,
     ApplicationComponent,
-    RegisterApplicationComponent
+    RegisterApplicationComponent,
+    ApplicationsByMechanicComponent
   ],
   imports: [
     BrowserModule,
